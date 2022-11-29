@@ -41,3 +41,13 @@ let sumOfBookPrices = books.reduce(sum,  0);
 console.log(sumOfBookPrices);
 
 // let handTotal = handCards.reduce(function(sum, value) {return sum + value;}, 0);
+function filterByprice(book){
+    return book.price > 10;
+}
+
+let booksDiscount = books.filter(filterByprice);
+console.log("aaa"+booksDiscount);
+
+
+// (method) Array<{ title: string; price: number; }>.
+// filter<S>(predicate: (value: {title: string; price: number;}, index: number, array: {title: string; price: number;}[]) => value is S, thisArg?: any): S[]
