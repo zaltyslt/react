@@ -34,15 +34,6 @@ var books = [
 
 
 
-
-    
-
-    
-
-    
-
-    
-
 // 1. Parašykite funkciją, kuri atspausdintų visą knygų sąrašą (knygos eilės numerį ir pavadinimą. Panaudokite metodą map.    
 books.forEach((element, index) => console.log(`${index+1}. ${element.title}`));
 
