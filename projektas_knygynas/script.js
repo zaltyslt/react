@@ -190,3 +190,46 @@ var voters = [
     numOldsPeople: 4
     }
     */
+
+
+    var voters = [
+        { name: "Bob", age: 30, voted: true },
+        { name: "Jake", age: 32, voted: true },
+        { name: "Kate", age: 25, voted: false },
+        { name: "Sam", age: 20, voted: false },
+        { name: "Phil", age: 21, voted: true },
+        { name: "Ed", age: 55, voted: true },
+        { name: "Tami", age: 54, voted: true },
+        { name: "Mary", age: 31, voted: false },
+        { name: "Becky", age: 43, voted: false },
+        { name: "Joey", age: 41, voted: true },
+        { name: "Jeff", age: 30, voted: true },
+        { name: "Zack", age: 19, voted: false },
+      ];
+      function countByAge(votersArray, minAge, maxAge) {
+        let filtered = votersArray.filter(
+          (voter) => voter.age >= minAge && voter.age <= maxAge
+        );
+        return filtered;
+      }
+      function countVoted(votedArr) {
+        let num = votedArr.filter((voter) => voter.voted).length;
+        return num;
+      }
+      function voterResults(arr) {
+        let numYoungVotes = countVoted(countByAge(arr, 18, 25));
+        let numYoungPeople = countByAge(arr, 18, 25).length;
+        let numMidVotesPeople = countVoted(countByAge(arr, 26, 35));
+        let numMidsPeople = countByAge(arr, 26, 35).length;
+        let numOldVotesPeople = countVoted(countByAge(arr, 36, 55));
+        let numOldsPeople = countByAge(arr, 36, 55).length;
+        return {
+          numYoungVotes,
+          numYoungPeople,
+          numMidVotesPeople,
+          numMidsPeople,
+          numOldVotesPeople,
+          numOldsPeople,
+        };
+      }
+      console.log(voterResults(voters));
